@@ -26,12 +26,16 @@ minecraft {
 }
 
 repositories {
+    maven {
+        name = "MinecraftForge"
+        url = "https://maven.minecraftforge.net/"
+    }
+
     mavenCentral()
 }
 
 dependencies {
-    implementation minecraft.dependency("net.minecraftforge:forge:${minecraft_version}-${forge_version}")
-    annotationProcessor 'net.minecraftforge:eventbus-validator:7.0.5'
+    minecraft "net.minecraftforge:forge:1.21.11-61.2.5"
 }
 
 tasks.withType(JavaCompile).configureEach {

@@ -1,8 +1,5 @@
 plugins {
-    id 'java'
-    id 'idea'
-    id 'eclipse'
-    id 'net.minecraftforge.gradle' version '[7.0.29,8.0)'
+    id 'net.minecraftforge.gradle' version '[7.0,7.2)'
 }
 
 version = mod_version
@@ -35,7 +32,7 @@ repositories {
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:1.21.11-61.2.5"
+    minecraft 'net.minecraftforge:forge:1.21.11-61.2.5'
 }
 
 tasks.withType(JavaCompile).configureEach {

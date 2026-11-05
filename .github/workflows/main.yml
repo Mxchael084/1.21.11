@@ -13,6 +13,12 @@ jobs:
       - name: Repository auschecken
         uses: actions/checkout@v4
 
+      - name: Java 8 einrichten
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '8'
+
       - name: Java 21 einrichten
         uses: actions/setup-java@v4
         with:
@@ -24,11 +30,12 @@ jobs:
         with:
           gradle-version: '9.3.0'
 
-      - name: Mod bauen
+      - name: Build
+        working-directory: ./1.21.11
         run: gradle build
 
-      - name: JAR als Artifact hochladen
+      - name: JAR hochladen
         uses: actions/upload-artifact@v4
         with:
           name: rupture-reborn
-          path: build/libs/*.jar
+          path: 1.21.11/build/libs/*.jar
